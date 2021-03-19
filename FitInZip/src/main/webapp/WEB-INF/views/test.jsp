@@ -9,6 +9,7 @@
 <body>
 
 	<h1>db 작업 성공!!</h1>
+	<h2>test</h2>
 
 </body>
 </html>
