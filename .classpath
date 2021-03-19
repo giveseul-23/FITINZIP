@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="FitInZip/src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/MyStudy/util_zip/apache-tomcat-8.5.61/apache-tomcat-8.5.61/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/MyStudy/util_zip/apache-tomcat-8.5.61/apache-tomcat-8.5.61/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
