@@ -9,21 +9,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>One Page Wonder - Start Bootstrap Template</title>
+  <title>FITIN.ZIP</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../resources/main/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../resources/css/one-page-wonder.min.css" rel="stylesheet">
+  <link href="../resources/main/css/one-page-wonder.min.css" rel="stylesheet">
   
   <!-- 한글 폰트 -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
 
 <style>
 	* {
@@ -50,7 +51,7 @@
             <a class="nav-link" href="#">라이브PT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">용품</a>
+            <a class="nav-link" href="product">용품</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">로그인</a>
@@ -62,7 +63,7 @@
             <a class="nav-link" href="#">1:1 컨설팅</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">장바구니</a>
+            <a class="nav-link" href="cart">장바구니</a>
           </li>
         </ul>
       </div>
@@ -88,7 +89,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="../resources/img/img_main_cont1.png" alt="">
+            <img class="img-fluid rounded-circle" src="../resources/main/img/img_main_cont1.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -108,7 +109,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="../resources/img/img_main_cont2.png" alt="">
+            <img class="img-fluid rounded-circle" src="../resources/main/img/img_main_cont2.png" alt="">
           </div>
         </div>
         <div class="col-lg-6">
@@ -129,7 +130,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="../resources/img/img_main_cont3.png" alt="">
+            <img class="img-fluid rounded-circle" src="../resources/main/img/img_main_cont3.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -154,8 +155,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../resources/vendor/jquery/jquery.min.js"></script>
-  <script src="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../resources/main/vendor/jquery/jquery.min.js"></script>
+  <script src="../resources/main/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CartDAO">
+
+
+	<select id="getCartList" resultType="CartVO">
+	SELECT P.PRO_IMG ,P.PRO_NAME, C.AMOUNT
+	FROM MEMBER M
+	INNER JOIN CART C
+		ON M.ID = C.MEM_ID
+	INNER JOIN PRODUCT P
+		ON C.PRO_NUM = P.PRO_NUM
+	<!-- WHERE M.ID = #{mem_id}	 -->
+	</select>
+
+</mapper>

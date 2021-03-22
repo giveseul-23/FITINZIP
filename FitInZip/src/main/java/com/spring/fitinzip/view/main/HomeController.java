@@ -1,4 +1,4 @@
-package com.spring.fitinzip.main;
+package com.spring.fitinzip.view.main;
 
 import java.text.DateFormat;
 import java.util.Date;
