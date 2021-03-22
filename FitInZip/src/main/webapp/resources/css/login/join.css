@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+* {
+	margin: 0;
+	padding : 0;
+	border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_basic.icn-social.kk {
+    background: #ffe812;
+    color: #000;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 92px;
+    padding: 0 20px;
+    line-height: 50px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+.btn_basic.icn-social.kk:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    margin-top: -3px;
+    background: url(https://img.hamggae.com/www/common/icon/ic_kk.png) no-repeat;
+    background-size: 100% auto;
+}
+.btn_basic.full + .btn_basic {
+    margin-top: 12px;
+}
+.btn_basic.full {
+    width: 100%;
+}
+.btn_basic.big {
+    font-size: 16px;
+}
+
+.bg_gray1 {
+    background: #f8f8f8 !important;
+}
+.black {
+    color: #000 !important;
+}

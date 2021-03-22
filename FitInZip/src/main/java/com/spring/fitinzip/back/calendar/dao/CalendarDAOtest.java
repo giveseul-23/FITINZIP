@@ -12,7 +12,7 @@ public class CalendarDAOtest {
 	private SqlSessionTemplate mybatis;
 	
 	public CalendarDAOtest() {
-		System.out.println("CalendarDAOtest 생성자 실행");
+		System.out.println("CalendarDAOtest");
 	}
 	
 	public void insert(Map<String, String> map) {
