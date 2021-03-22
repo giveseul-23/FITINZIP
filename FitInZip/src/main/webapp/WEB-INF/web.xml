@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          id="WebApp_ID" version="3.1">
          
+         <!-- 모든 url 요청의 인코딩 방식을 UTF-8로 설정 -->
          <filter>
         	<filter-name>CharacterEncoding</filter-name>
         	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
