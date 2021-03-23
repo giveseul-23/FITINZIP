@@ -13,8 +13,9 @@ public class CalendarDAOtest {
 	private SqlSessionTemplate mybatis;
 	
 	public CalendarDAOtest() {
+
 		System.out.println("CalendarDAOtest ������ ����");
-	}
+
 	
 	public void insert(Map<String, String> map) {
 		mybatis.insert("test.insertTest", map);

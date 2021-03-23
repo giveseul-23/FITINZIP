@@ -16,13 +16,11 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class MemberVO {
-<<<<<<< HEAD:FitInZip/java/com/spring/fitinzip/back/member/vo/MemberVO.java
-=======
 
->>>>>>> jinah:FitInZip/src/main/java/com/spring/fitinzip/back/member/vo/MemberVO.java
 	private String id;
 	private String password;
-	private String namephone;
+	private String name;
+	private String phone;
 	private String post;
 	private String addr;
 	private String detailAddr;
@@ -33,4 +31,5 @@ public class MemberVO {
 	private String memFileName;
 	private String role;
 	private String withdrawal;
+
 }

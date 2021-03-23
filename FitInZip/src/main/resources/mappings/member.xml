@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDAO">
+	
+	<!-- 카카오로 로그인한 사람 데이터가 있는지 없는지 -->
+	<!-- 1이면 이미 가입 -> 로그인, 0 이면 최초 -> 가입포멧 -->
+	<select id="kakaoIsfirst" parameterType="string" resultType="String">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE ID = #{id}
+	</select>
+
+
+	<insert id="kakaoJoin" parameterType="com.spring.fitinzip.back.member.vo.MemberVO">
+		INSERT INTO MEMBER (ID, NAME, GENDER, PHONE, BIRTH)
+		VALUES (#{id}, #{name}, #{gender}, #{phone}, #{birth})
+	</insert>
+	
+	
+
+
+</mapper>
