@@ -13,9 +13,9 @@
 	</select>
 
 
-	<insert id="JoinMember" parameterType="com.spring.fitinzip.back.member.vo.MemberVO">
-		INSERT INTO MEMBER (ID, NAME, GENDER)
-		VALUES (#{id}, #{name}, #{gender})
+	<insert id="kakaoJoin" parameterType="com.spring.fitinzip.back.member.vo.MemberVO">
+		INSERT INTO MEMBER (ID, NAME, GENDER, PHONE, BIRTH)
+		VALUES (#{id}, #{name}, #{gender}, #{phone}, #{birth})
 	</insert>
 	
 	

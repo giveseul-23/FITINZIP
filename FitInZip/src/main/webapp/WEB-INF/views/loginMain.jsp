@@ -44,12 +44,12 @@
 							} else {
 								/* 추가정보 가입페이지로 이동 */
 								document.write(''
-										+ '<form action="/kakaoAdd" id="smb_form" method="post">'
+										+ '<form action="/kakaoAdd" id="kakao" method="post">'
 										+ '<input type="hidden" id="id" name="id" value=' + id + '>'
 										+ '<input type="hidden" id="name" name="name" value=' + name + '>'
 										+ '<input type="hidden" id="gender" name="gender" value=' + gender + '>'
 										+ '</form>');
-								document.getElementById("smb_form").submit();
+								document.getElementById("kakao").submit();
 							}
 						})
 					}

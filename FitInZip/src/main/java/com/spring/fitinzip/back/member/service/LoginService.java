@@ -7,4 +7,5 @@ public interface LoginService {
 
 	String kakaoIsFirst(String id) throws JsonProcessingException;
 	void joinMember(MemberVO vo);
+	void kakaoJoin(MemberVO vo);
 }

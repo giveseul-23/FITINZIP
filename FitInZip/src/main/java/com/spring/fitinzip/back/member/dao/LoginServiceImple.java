@@ -24,13 +24,19 @@ public class LoginServiceImple implements LoginService{
 			String isFirst = memberDAO.kakaoIsFirst(id);
 			
 			return isFirst;
-		
 	}
 	
 
 	@Override
 	public void joinMember(MemberVO vo) {
 		memberDAO.joinMember(vo);
+	}
+
+
+	@Override
+	public void kakaoJoin(MemberVO vo) {
+		memberDAO.kakaoJoin(vo);
+		
 	}
 
 
