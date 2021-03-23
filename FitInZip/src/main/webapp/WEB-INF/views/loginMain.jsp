@@ -25,8 +25,33 @@
 						const kakao_account = res.kakao_account;
 						console.log(kakao_account);
 						var id = kakao_account.email;
-						var name = kakao_account.name;
+						var name = kakao_account.profile.nickname;
 						var gender = kakao_account.gender;
+						
+						$.ajax({
+							url: "/kakaoLogin",
+							method: "post",
+							data: { "id" : id,
+									"name" : name,
+									"gender" : gender
+									},
+							dataType: "json"
+						}).then(function (isFirst) {
+							alert("가입여부 : " + isFirst);
+							if (isFirst == 1) {
+								alert("로그인되었습니다");
+								/* 메인페이지로 이동 */
+							} else {
+								/* 추가정보 가입페이지로 이동 */
+								document.write(''
+										+ '<form action="/kakaoAdd" id="smb_form" method="post">'
+										+ '<input type="hidden" id="id" name="id" value=' + id + '>'
+										+ '<input type="hidden" id="name" name="name" value=' + name + '>'
+										+ '<input type="hidden" id="gender" name="gender" value=' + gender + '>'
+										+ '</form>');
+								document.getElementById("smb_form").submit();
+							}
+						})
 					}
 				});
 			}

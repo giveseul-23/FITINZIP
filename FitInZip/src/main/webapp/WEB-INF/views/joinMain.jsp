@@ -23,10 +23,14 @@
 						const kakao_account = res.kakao_account;
 						console.log(kakao_account);
 						var id = kakao_account.email;
-						var name = kakao_account.name;
+						var name = kakao_account.profile.nickname;
 						var gender = kakao_account.gender;
-						var joinInfo = {id : "id", name : "name", gender : "gender"};
-						document.write('<form action="/join" id="smb_form" method="post"><input type="hidden" id="joinInfo" name="joinInfo" value=""></form>');
+						document.write(''
+								+ '<form action="/join" id="smb_form" method="post">'
+								+ '<input type="hidden" id="id" name="id" value=' + id + '>'
+								+ '<input type="hidden" id="name" name="name" value=' + name + '>'
+								+ '<input type="hidden" id="gender" name="gender" value=' + gender + '>'
+								+ '</form>');
 						document.getElementById("smb_form").submit();
 					}
 				});

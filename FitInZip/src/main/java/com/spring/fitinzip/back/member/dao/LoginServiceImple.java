@@ -3,19 +3,39 @@ package com.spring.fitinzip.back.member.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.spring.fitinzip.back.member.service.LoginService;
 import com.spring.fitinzip.back.member.vo.MemberVO;
 
 @Service
 public class LoginServiceImple implements LoginService{
 	
-	/* @Autowired */
+	@Autowired
 	private MemberDAO memberDAO;
 	
+	public LoginServiceImple() {
+		System.out.println(">> LoginServiceImple() 객체생성");
+	}
+	
+
+	@Override
+	public String kakaoIsFirst(String id) throws JsonProcessingException {
+		System.out.println("kakaoIsFirst");
+			String isFirst = memberDAO.kakaoIsFirst(id);
+			
+			return isFirst;
+		
+	}
+	
+
 	@Override
 	public void joinMember(MemberVO vo) {
-		/*memberDAO.joinMember(vo);*/
+		memberDAO.joinMember(vo);
 	}
+
+
+
+
 
 	
 }
