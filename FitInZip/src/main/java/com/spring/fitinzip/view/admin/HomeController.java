@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.spring.fitinzip.back.calendar.CalendarService;
@@ -31,6 +32,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired
 	private CalendarService calendarService;
+	private String mem_id;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) {
@@ -45,6 +47,7 @@ public class HomeController {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("ID", "hong");
+		mem_id = (String)session.getAttribute("ID");
 		
 		return "home";
 	}
@@ -52,18 +55,34 @@ public class HomeController {
 	@RequestMapping(value="calendar")
 	public String goCalendar(HttpServletRequest request, Model model) {
 		
-		List<CalendarVO> list = calendarService.selectAttendList(request);
-		List<String> userDate = new ArrayList<String>();
-		int i = 0;
-		for (CalendarVO vo : list) {
-			userDate.add(vo.getAttendDate());
+		return "calendar/myCalendar";
+	}
+	
+	@RequestMapping(value = "getAttendance")
+	@ResponseBody
+	public List<CalendarVO> getAttendance() {
+		List<CalendarVO> list = calendarService.selectAttendList(mem_id);
+		
+		return list;
+	}
+	
+	
+	@RequestMapping(value = "setAttendance")
+	@ResponseBody
+	public Map<String, String> name() {
+		CalendarVO vo = calendarService.chkAttendance(mem_id);
+		Map<String, String> map = new HashMap<String, String>();
+		
+		if(vo != null) {
+			map.put("result", "overlap");
+			return map;
 		}
 		
-		System.out.println(userDate);
-		
-		model.addAttribute("Attendence", userDate);
-		
-		return "calendar/myCalendar";
+		int result = calendarService.insertAttendance(mem_id);
+		if(result == 1) {
+			map.put("result", "chk");
+		}
+		return map;
 	}
 	
 }

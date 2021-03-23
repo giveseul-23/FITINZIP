@@ -25,13 +25,24 @@ public class CalendarServiceImpl implements CalendarService {
 	}
 
 	@Override
-	public List<CalendarVO> selectAttendList(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String mem_id = (String)session.getAttribute("ID");
+	public List<CalendarVO> selectAttendList(String mem_id) {
 		System.out.println("id : " + mem_id);
 		List<CalendarVO> list = calendarDAO.selectAttendList(mem_id);
 		
 		return list;
 	}
+
+	@Override
+	public CalendarVO chkAttendance(String mem_id) {
+		CalendarVO vo = calendarDAO.chkAttendance(mem_id);
+		return vo;
+	}
+
+	@Override
+	public int insertAttendance(String mem_id) {
+		return calendarDAO.insertAttendance(mem_id);
+		
+	}
+	
 	
 }
