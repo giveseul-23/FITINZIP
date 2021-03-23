@@ -6,26 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>장바구니</title>
+<link rel="stylesheet" type="text/css" href="../resources/css/cart.css"/>
 </head>
 <body>
 	<nav style="background-color:yellow;"><h2>여기는 nav</h2></nav>
 	
-	<article class="cart-list">
+	<article class="contents margin-xsmall">
 		<h2 class="cart-title">장바구니</h2>
-		<div class="cart-amount">
+		<div class="mc-cart-num">
 			<span>~개 상품</span>
 		</div>
 		<div class="item-container">
-			<div class="item-list" id="cart">
-				<div class="product-delete-all">
-					<a class="btn-product-delete-all" href=#>전체삭제</a>
+			<div class="item-list-wrap" id="cart">
+				<div class="product-select-all">
+					<a class="btn-cart-delete-All" href=#>전체삭제</a>
 				</div>
-				<div class="product-opt-cart">
+				<div class="product-opt_cart">
 					<input type="hidden" name="proName">
 					<input type="hidden" name="mem_id">
 					<input type="hidden" name="amount">
 				</div>
-				<div class="product-detail">
+				<div class="item-detail">
 					<div class="item-info">
 						<span class="img-wrap">
 						<img src=".." alt="상품이미지">
@@ -35,14 +36,36 @@
 						</div>
 					</div>
 					<div class="option-wrap">
-						<button href=# class="btn-option-change">수량 변경</button>
+						<button href=# class="optchange-btn btn-link sky-blue width-max">수량 변경</button>
 					</div>
-					<div class="total-price">가격 몇 원</div>
+					<div class="total-price">
+						<strong class="retail-price">가격 몇 원</strong>
+					</div>
 					<div class="delete-btn">
-						<a class="btn-delete" href=#><img src="../resources/delete-icon.png"></a>
+						<a class="btn-delete" href=#><img style= "width:20px; height:20px" src="../resources/delete-icon.png"></a>
 					</div>
 				</div>
 			</div>
+			
+			<div class="product-checkout">
+				<strong class="tit">주문예정금액</strong>
+				<div class="info-price">
+					<span class="item-price">
+						<span class="label">상품 금액</span>
+						<span class="price"><strong>얼마다 몇원</strong></span>
+					</span>
+					<span class="delivery-price">
+						<span class="label">예상 배송비</span>
+						<span class="price"><strong>0원</strong></span>
+					</span>
+				</div>
+				<div class="total-price">
+					<span class="label">총 결제 예정 금액</span>
+					<span class="price sale total"><strong>총 결제 몇 원</strong></span>
+				</div>
+				<a class="btn-link xlarge width-max btn-order indian-red" href=#>주문하기</a>
+			</div>
+			
 		</div>
 		
 	</article>
