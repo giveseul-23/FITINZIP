@@ -25,26 +25,30 @@
 					<input type="hidden" name="proName">
 					<input type="hidden" name="mem_id">
 					<input type="hidden" name="amount">
-				</div>
-				<div class="item-detail">
-					<div class="item-info">
-						<span class="img-wrap">
-						<img src=".." alt="상품이미지">
-						</span>
-						<div class="info-wrap">
-					
+				
+					<div class="item-detail">
+						<div class="item-info">
+							<span class="img-wrap">
+							<img src=".." alt="상품이미지">
+							</span>
+							<div class="info-wrap">
+								<a class="tit">상품명</a>
+								<span class="opt quantity">수량 : 몇 개냐</span>
+							</div>
+						</div>
+						<div class="option-wrap">
+							<div>
+								<button href=# class="optchange-btn btn-link sky-blue width-max">수량 변경</button>
+							</div>
+						</div>
+						<div class="total-price">
+							<strong class="retail-price">가격 몇 원</strong>
+						</div>
+						<div class="delete-btn">
+							<a class="btn-delete" href=#><img style= "width:15px; height:15px" src="../resources/delete-icon.png"></a>
 						</div>
 					</div>
-					<div class="option-wrap">
-						<button href=# class="optchange-btn btn-link sky-blue width-max">수량 변경</button>
-					</div>
-					<div class="total-price">
-						<strong class="retail-price">가격 몇 원</strong>
-					</div>
-					<div class="delete-btn">
-						<a class="btn-delete" href=#><img style= "width:20px; height:20px" src="../resources/delete-icon.png"></a>
-					</div>
-				</div>
+				</div>	
 			</div>
 			
 			<div class="product-checkout">

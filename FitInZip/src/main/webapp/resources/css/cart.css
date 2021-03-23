@@ -52,6 +52,10 @@
   	box-sizing: border-box;
 }
 
+.product-opt_cart:last-child {
+	border-bottom: 1px solid #dedfda;
+}
+
 .item-detail {
 	display: table;
 	width: 100%;
@@ -76,6 +80,10 @@
   padding-left: 158px;
   line-height: 18px;
   vertical-align: top;
+}
+
+.opt.quantity {
+  display: block;
 }
 
 .product-opt_cart .item-detail .total-price {
