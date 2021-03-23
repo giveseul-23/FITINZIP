@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class CalendarVO {
-
+	
 	private String memId;
 	private String attendDate;
 }

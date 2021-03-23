@@ -5,7 +5,7 @@
 <mapper namespace="test">
 
 	<insert id="insertTest" parameterType="Map">
-		insert into calender
+		insert into calendar
 		values(#{memId}, #{attendDate})
 	</insert>
 	
