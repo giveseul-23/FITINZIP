@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,9 +25,25 @@
 </head>
 <body>
 	<div id="map" style="width:100%;height:350px;"></div>
-
+	
+	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=42d81b928e716a630ed23f5e7f1d07e8"></script>
 	<script>
+		var arr = new Array();
+		<c:forEach items="${maplist }" var="map">
+			arr.push({
+					addr: "${map.mapAddr}",
+					latitude : "${map.latitude}",
+					hardness : "${map.hardness}"
+				});
+		</c:forEach>
+		console.log(arr);
+		console.log(arr[0].addr);
+		console.log(arr[0].latitude);
+		console.log(arr[0].hardness);
+	</script>
+	<script>
+
 	var mapContainer = document.getElementById('map'), // 지도의 중심좌표
 	    mapOption = { 
 	        center: new kakao.maps.LatLng(37.50333604438873, 127.02426434044864), // 지도의 중심좌표
@@ -35,10 +52,11 @@
 	
 	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 	
+	
 	// 지도에 마커를 표시합니다 
 	var marker = new kakao.maps.Marker({
 	    map: map, 
-	    position: new kakao.maps.LatLng(37.50333604438873, 127.02426434044864)
+	    position: new kakao.maps.LatLng(parseInt(arr[0].latitude), parseInt(arr[0].hardness))
 	});
 	
 	// 커스텀 오버레이에 표시할 컨텐츠 입니다
@@ -55,7 +73,9 @@
 	            '                <img src="https://res.cloudinary.com/peloton-cycle/image/fetch/dpr_1.0,f_auto,q_auto:best,w_800/https://images.ctfassets.net/6jnflt57iyzx/6t5BLoYNeBd0ewmFUKl7GZ/a954095d1ff4db368673f59691390a71/Tread_Plus_Mobile.png" width="73" height="70">' +
 	            '           </div>' + 
 	            '            <div class="desc">' + 
-	            '                <div class="ellipsis">서울특별시 서초구 서초4동</div>' + 
+	            '                <div class="ellipsis">' +
+	            				arr[0].addr +
+	            				'</div>' + 
 	            '                <div class="jibun ellipsis">(우) 06611 (지번) 강남대로 459</div>' + 
 	            '                <div><a href="http://localhost:8080/" target="_blank" class="link">홈페이지 바로가기</a></div>' + 
 	            '            </div>' + 

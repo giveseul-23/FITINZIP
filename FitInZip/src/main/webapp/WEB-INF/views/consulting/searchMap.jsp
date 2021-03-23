@@ -40,6 +40,8 @@
 		var coords;
 		var addr;
 		var mapAddr1 = "";
+		var latitude1 = "";
+		var hardness1 = "";
 		
 		function sample5_execDaumPostcode() {
 			new daum.Postcode({
@@ -69,18 +71,16 @@
 			            if(addr != null){
 			    			mapAddr1 = document.getElementById("sample5_address").value;
 			    			console.log("mapAddr1 : " + mapAddr1);
+			    			var ps = marker.getPosition();
+			    			latitude1 = ps.La;
+			    			hardness1 = ps.Ma;
+			    			console.log("la : " + latitude1 + "ma : "+ hardness1);
 			    		}
 			            
 			        });
 			    }
 			}).open();
 		}
-		
-		console.log("mapAddr1 : " + mapAddr1);
-		
-		var ps = marker.getPosition();
-		var latitude1 = ps.La;
-		var hardness1 = ps.Ma;
 		
 		
 		function send(){

@@ -1,5 +1,7 @@
 package com.spring.fitinzip.back.admin.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,10 +22,8 @@ public class AdminDAO {
 		
 	}
 	
-	public MapVO selectMap(MapVO vo) {
-		MapVO map = null;
-		
-		return map;
+	public List<MapVO> selectMap(MapVO vo) {
+		return mybatis.selectList("AdminDAO.select", vo);
 	}
 	
 	public void delete(MapVO vo) {

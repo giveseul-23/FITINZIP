@@ -1,9 +1,13 @@
 package com.spring.fitinzip.view.admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,8 +35,15 @@ public class AdminController {
 		return mapper.writeValueAsString(null);
 	}
 	
+	
 	@RequestMapping("/consulting")
-	public String consulting(){
+	public String consulting(MapVO map, Model model){
+			List<MapVO> maplist = adminService.getMapList(map);
+			
+			model.addAttribute("maplist", maplist);
+			
+			System.out.println("maplist : " + maplist);
+			
 			return "consulting/consulting";
 		}
 	

@@ -1,6 +1,8 @@
 package com.spring.fitinzip.back.admin.dao;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +26,10 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public MapVO getMap(MapVO vo) {
-		MapVO map = adminDAO.selectMap(vo); 
-		return map;
+	public List<MapVO> getMapList(MapVO vo) {
+		List<MapVO> maplist = adminDAO.selectMap(vo); 
+		
+		return maplist;
 	}
 
 }
