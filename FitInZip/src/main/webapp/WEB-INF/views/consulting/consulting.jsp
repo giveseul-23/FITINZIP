@@ -35,7 +35,7 @@
 					hardness : "${map.hardness}"
 				});
 		</c:forEach>
-		console.log(arr);
+		console.log(arr[0].addr);
 	</script>
 	<script>
     mapOption = { 
