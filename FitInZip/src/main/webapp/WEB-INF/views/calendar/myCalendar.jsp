@@ -38,13 +38,46 @@
 				color : '#d40000' 
 			}
 	    ],
-	    events: 
-	    	[
-	    		{
-	    			title: 'test',
-	    			start: '2021-03-23'
-	    		}
-	    	]
+	    events:function(info, successCallback, failureCallback){
+            $.ajax({
+                url: '${pageContext.request.contextPath}/getEvents.do',
+                dataType: 'json',
+                success: 
+                    function(result) {
+                        var events = [];
+                        if(result!=null){
+                                $.each(result, function(index, element) {
+                                var enddate=element.enddate;
+                                 if(enddate==null){
+                                     enddate=element.startdate;
+                                 }
+                                 
+                                 var startdate=moment(element.startdate).format('YYYY-MM-DD');
+                                 var enddate=moment(enddate).format('YYYY-MM-DD');
+                                 var realmname = element.realmname;
+                                 
+                                 // realmname (분야) 분야별로 color 설정
+                                 if (realmname == "기타"){
+                                     events.push({
+                                            title: element.title,
+                                            start: startdate,
+                                            end: enddate,
+                                               url: "${pageContext.request.contextPath }/detail.do?seq="+element.seq,
+                                               color:"#6937a1"                                                   
+                                         }); //.push()
+                                 }
+                                                                     
+                                 else if (realmname == "무용"){
+                                     events.push({
+                                            title: element.title,
+                                            start: startdate,
+                                            end: enddate,
+                                               url: "${pageContext.request.contextPath }/detail.do?seq="+element.seq,
+                                               color:"#f7e600"                                                   
+                                         }); //.push()
+                                 }
+                                 
+                            });
     	});
     calendar.render();
 	});
