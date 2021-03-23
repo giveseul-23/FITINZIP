@@ -25,7 +25,6 @@ public class AdminController {
 		adminService.insertMap(map);
 		
 		System.out.println("AdminController 에서 insertMap 실행");
-		System.out.println("불러지냐???"+map.toString());
 		ObjectMapper mapper = new ObjectMapper();
 		
 		return mapper.writeValueAsString(null);
@@ -33,6 +32,8 @@ public class AdminController {
 	
 	@RequestMapping("/consulting")
 	public String consulting(){
+		
+			
 			return "consulting/consulting";
 		}
 	

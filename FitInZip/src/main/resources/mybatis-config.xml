@@ -18,7 +18,7 @@
   	
   <mappers>
    <mapper resource="mappings/calendar.xml"/>  
-   <mapper resource="mappings/member.xml"/>    
+   <!-- <mapper resource="mappings/member.xml"/>   -->  
    <mapper resource="mappings/mypage.xml"/>    
    <mapper resource="mappings/admin.xml"/>
     <!--  <mapper resource="mappings/cart.xml"/>     
