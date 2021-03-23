@@ -9,10 +9,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../resources/css/product.css"/>
 <script>
-	
+	function goCart() {
+
+	}
+
 </script>
 </head>
 <body>
+
 	<nav><h1>여기는 navbar 자리입니다</h1></nav>
 
 <div class="product-list">  
@@ -33,7 +37,7 @@
         <p class="card-text">다양한 중량선택 가능<br>튼튼한 쇠파이프 내장<br>강력한 웨이트 트레이닝 가능</p>
         </c:if>
 		
-		<form class="product-form">
+		<form action="goCart()" class="product-form">
 		<c:if test="${productList.proName eq '덤벨 1kg~10kg'}">
 			<select class="dumbbell-option" id="dumbbell">
 				<option value="none">-[필수]옵션을 선택하세요-</option>
@@ -49,7 +53,7 @@
 				<option value="10kg(+21,600원)">10kg(+21,600원)</option>
 			</select>
 			<div class="addcart-btn">
-  			<button type="submit">장바구니</button>
+  			<input type="button" value="장바구니">
   		 	</div>
 		</c:if>
 		
@@ -63,14 +67,14 @@
 				<option value="블루 - 6.4cm MAX:100KG">블루 - 6.4cm MAX:100KG</option>
 			</select>
 			<div class="addcart-btn">
-  			<button type="submit">장바구니</button>
+  			<input type="button" value="장바구니">
   		 	</div>
 		</c:if>
 		
 		<c:if test="${productList.proName ne '덤벨 1kg~10kg' && productList.proName ne '워크아웃 밴드' }">
 		
 			<div class="addcart-btn">
-  			<button type="submit">장바구니</button>
+  			<input type="button" value="장바구니">
   		 	</div>
 		</c:if>
 		 

@@ -11,7 +11,7 @@ import com.spring.fitinzip.back.cart.vo.CartVO;
 public class CartServiceImpl implements CartService {
 
 	@Override
-	public List<CartVO> getCart(CartVO vo) {
+	public List<CartVO> getCart(String mem_id) {
 		return null;
 	}
 

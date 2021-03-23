@@ -14,7 +14,11 @@ public class CartDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	public List<CartVO> getCart(CartVO vo) {
-		return mybatis.selectList("CartDAO.getCartList");
+	public void addCart(CartVO vo) {
+		
+	}
+	
+	public List<CartVO> getCart(String mem_id) {
+		return mybatis.selectList("CartDAO.getCartList", mem_id);
 	}
 }
