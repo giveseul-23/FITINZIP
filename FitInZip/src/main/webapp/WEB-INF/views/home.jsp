@@ -6,14 +6,9 @@
 </head>
 <body>
 <h1>
-	헬로우 월드!  
+	Hello world!  
 </h1>
 
-<div>
-	<form action="test">
-		<input type="submit" value="테스트">
-	</form>
-</div>
-
+<P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
