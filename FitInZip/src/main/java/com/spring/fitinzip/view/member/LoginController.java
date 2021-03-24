@@ -63,12 +63,14 @@ public class LoginController {
 		return "kakaoAdd";
 	}
 	
-	@RequestMapping(value="/kakaoJoin", method=RequestMethod.POST)
-	public void kakaoJoin(@RequestBody MemberVO vo) throws Exception {
+	@RequestMapping(value="/kakaoJoin")
+	@ResponseBody
+	public String kakaoJoin(MemberVO vo) throws JsonProcessingException {
 		System.out.println(">>> - 카카오 추가정보 가지고 insert하러 가자 제발~.~");
 		System.out.println("추가정보 입력 후 vo : " + vo);
 		
 		loginService.kakaoJoin(vo);
+		return "true";
 		
 	}
 	

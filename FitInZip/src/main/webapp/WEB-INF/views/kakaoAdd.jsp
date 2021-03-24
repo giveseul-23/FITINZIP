@@ -5,7 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/resources/css/login/joinPopUp.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <script>
 	window.onload = function(){
 		var start_year = "1930"; /* 시작할 년도 */
@@ -57,7 +60,7 @@
 
 <script>
 	$(function(){
-		$("#sendData").on("click", function () {
+		$("#sendData").on("click", function() {
 			
 			var id = $("#id").val();
 			var name = $("#name").val();
@@ -68,28 +71,27 @@
 			var kakaoInfo = {
 					"id" : id,
 					"name" : name,
-					"phone" : phone,
 					"gender" : gender,
+					"phone" : phone,
 					"birth" : birth
 			}
 			
-			$.ajax({
-				anyne: true,
-				url: "/kakaoJoin",
-				method: "post",
-				data: JSON.stringify(kakaoInfo),
-				dataType: "text",
-				success : function(data) {
-			        alert("가입이 완료되었습니다.");
-			        // 추카추카 페이지로가서 쿠폰을 발급합시다. 
-			        location.href = "joinSuccess"
-			    },
-			    error : function(error) {
-			    	alert("오류가 발생했습니다.\n고객센터로 문의해주세요.");
-			    	// 메인으로 보내주세요 제발 
-				}
-			});
+			console.log(kakaoInfo);
+			
+			let options = {
+				method: "POST",
+				body: new URLSearchParams(kakaoInfo) 	
+			}
+			
+			fetch("/kakaoJoin", options)
+			  .then(async function (response) {
+				  let result = await response.json();
+				  alert("가입완료되었습니다. result : " + result);
+			  })
+			  .catch(err => alert("오류가 발생 : " + err));
+			
 		});
+		
 	});
 </script>
 
@@ -120,7 +122,7 @@
 	        </label>
 	        </div>
 	    </article>
-	    <form>
+	    <form action="/kakaoJoin" method="post">
 			<article>
 				<div data-adarea="이름" class="form-box-input adClick">
 					<input type="text" name="name" id="name" value="${vo.name }" class>
@@ -139,6 +141,7 @@
 				<input type="hidden" name="birth" id="birth">
 			</article>
 			<article class="last-box mt30">
+				<!-- <input class="btn_basic full" type="submit" value="회원가입"> -->
 				<input class="btn_basic full" type="button" value="회원가입" id="sendData">
 			</article>
 		</form>
