@@ -9,7 +9,7 @@
 	VALUES(CART_SEQ.NEXTVAL, #{mem_id}, #{pro_num}, DEFAULT);
 	</insert>
 
-	<select id="getCartList" resultType="CartVO">
+	<select id="getCartList" resultType="com.spring.fitinzip.back.cart.vo.CartVO">
 	SELECT P.PRO_IMG ,P.PRO_NAME, C.AMOUNT
 	FROM MEMBER M
 	INNER JOIN CART C

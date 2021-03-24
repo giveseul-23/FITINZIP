@@ -17,7 +17,8 @@ public class MemberVO {
 
 	private String id;
 	private String password;
-	private String namephone;
+	private String name;
+	private String phone;
 	private String post;
 	private String addr_1;
 	private String addr_2;
